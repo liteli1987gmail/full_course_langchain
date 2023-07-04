@@ -517,9 +517,8 @@ pprint(conversation.memory.store)
 
 ## 参考资料
 
-GitHub 仓库：https://github.com/liteli1987gmail/full_course_langchain/tree/main/code
+GitHub 仓库：https://github.com/liteli1987gmail/full_course_langchain/blob/main/code/memory/conversations_memory.ipynb
 
-## 学习交流
-![](https://pic2.zhimg.com/80/v2-2307a70c1fcf93b9cd5e2a12d5114779_1440w.jpeg)
+
 
 
