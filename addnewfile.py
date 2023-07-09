@@ -32,17 +32,5 @@ def create_files_from_md(md_file):
             if not os.path.exists(md_file_path):
                 with open(md_file_path, 'w', encoding='utf-8') as md_file:
                     md_file.write("# " + line)
-    
-    # for root, dirs, files in os.walk(".", topdown=False):
-    #     # Exclude .git folder
-    #     dirs[:] = [d for d in dirs if d not in ['.git']]
-    #     for name in files:
-    #         file_path = os.path.join(root, name)
-    #         if file_path not in should_exist:
-    #             os.remove(file_path)
-    #     for name in dirs:
-    #         dir_path = os.path.join(root, name)
-    #         if dir_path not in should_exist:
-    #             shutil.rmtree(dir_path)
 
 create_files_from_md("menu.md")
