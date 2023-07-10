@@ -1,0 +1,64 @@
+# 模型输入输出 (Model I/O)
+
+模型输入输出 (Model I/O), 打通大语言模型应用开发的“最后一公里”。
+
+最近一年左右，通过强化学习等方法对模型进行 Fine-tuning（微调），以及在Prompts（提示）中使用各种方法，以从这些模型中获得最佳效果。一旦我们能够做到这一点，从这些大型语言模型中我们可以得到一些非常好的结果。
+问题是，它们仍然无法以接口方式访问现有数据和API,无法与真实的世界连接起来就很难应用。
+
+如果我们想要使用这些模型构建一个应用程序，我们需要某种方式在大型语言模型和传统软件之间进行接口交互。
+
+任何大语言模型应用的核心元素是 —— 模型的输入 Input 和输出 Output。
+
+而 LangChain 为我们提供了与任何大型语言模型进行交互的基本组件。
+
+LangChain 不仅可以方便地与最新、最强大的模型如GPT-4进行交互，还可以与本地私有化部署的语言模型，或是在 HuggingFace 上找到的开源模型进行交互。
+
+只需几行代码，就可以实现与这些模型进行对话。如何使用 Langchain 的基础组件 Model I/O 来访问大型语言模型？来看看下面这张示意图：
+
+![ model_io 图示](/img/model_io.jpg)
+
+Model I/O 组件提供了三个核心功能：
+
+- [语言模型 models ](/docs/modules/model_io/models/): 通过接口调用语言模型，即 Model。
+- [提示 prompts ](/docs/modules/model_io/prompts/): 将模型输入模板化、动态选择和管理，即 Model I。
+- [输出解析器 output_parsers ](/docs/modules/model_io/output_parsers/): 从模型输出中提取信息 ，即 Model O。
+
+
+我们将深入了解如何使用 Langchain 的 Model I/O 组件来访问大型语言模型。
+
+LangChain Model I/O 组件的目前有三大模型类型。分别是通用大型语言模型 LLMs， 专用聊天模型 Chat Models 和文本嵌入模型 Text Embedding Models。
+
+在 LangChain 中使用的不同类型的完成大语言模型输入和输出。在这一章中，我们将对模型类型进行分类和认识。
+
+## 通用大型语言模型 LLMs
+
+首先介绍的是大型语言模型（ LLMs ）。这些模型以文本字符串作为输入，并返回文本字符串作为输出。
+
+## 聊天模型 Chat Models
+
+聊天模型是第二种介绍的模型类型。这些模型通常由语言模型支持，但其 API 更加结构化。具体来说，这些模型以聊天消息列表作为输入，并返回聊天消息。
+
+## 文本嵌入模型 Text Embedding Models
+
+文本嵌入模型是以文本作为输入，并返回浮点数列表，也就是向量维度表示的列表。
+
+这三种类型中，LLMs 和 Chat Models 很容易被人误解没有必要。实际上，LLMs 和 Chat Models 有微妙但重要的区别。
+
+## LLMs vs Chat Models 的区别
+
+LangChain 中的 LLMs 是指纯文本补全模型， 也就是Text To Text。
+它们包装的 API 接受字符串提示作为输入，并输出字符串补全部分。OpenAI 的 GPT-3 就是 LLM 的实现典型。
+
+Chat Models 通常由 LLMs 支持，但专门用于进行对话。
+
+Chat models 的不同之处在于：提供以 "聊天消息" 作为输入和输出的接口。它们的输入不是单个字符串，而是聊天消息的列表。
+
+通常，这些消息带有发言者身份（LangChain 目前支持的消息类型有“AIMessage”，“HumanMessage”，“SystemMessage”）。它们返回一个（"AI"）聊天消息作为输出。GPT-4 和 Anthropic 的 Claude 都是作为 Chat Models 实现的。
+
+
+## LLMs 和 Chat Models 的公众接口
+
+无论您使用的是LLMs 和 Chat Models 模型,都可以调用 `predict` 函数。
+
+尽管它们之间存在细微差别，LangChain 允许他们使用相同的 `predict` 函数。我们可以导入这两个类，实例化它们，然后在这两个类上使用 `predict` 函数并观察它们之间的区别。
+

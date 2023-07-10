@@ -15,11 +15,17 @@
 1.5 (本章小结)
 
 第 2 章 模型输入输出 (Model I/O)
-2.1 提示 (Prompts)
-2.1.1 提示模板 (Prompt templates)
-2.1.2 示例选择器 (example selectors)
-2.2 语言模型 (Language models)
-2.3 输出解析器 output parsers
+2.1 语言模型 (Language models)
+2.1.1 大型语言模型（LLMs）
+2.1.2 聊天模型 (Chat Models)
+2.1.3 文本嵌入模型 (Text Embedding Models)
+2.2  提示 (Prompts)
+2.2.1 提示模板 (PromptTemplate)
+2.2.2 示例提示模板 (FewShotPromptTemplate)
+2.2.3 控制提示长度 (LengthBasedExampleSelector)
+2.3 输出解析器 (Output Parsers)
+2.3.1 输出列表[]格式
+2.3.2 输出JSON格式
 2.4 (本章小结)
 
 第 3 章 数据连接 (Data Connection)
