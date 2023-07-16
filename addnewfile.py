@@ -33,4 +33,18 @@ def create_files_from_md(md_file):
                 with open(md_file_path, 'w', encoding='utf-8') as md_file:
                     md_file.write("# " + line)
 
-create_files_from_md("menu.md")
+# create_files_from_md("menu.md")
+
+import os
+
+def list_files(startpath, output_file):
+    with open(output_file, 'w',encoding='utf-8') as f:
+        for root, dirs, files in os.walk(startpath):
+            level = root.replace(startpath, '').count(os.sep)
+            indent = ' ' * 4 * (level)
+            f.write('{}{}/\n'.format(indent, os.path.basename(root)))
+            subindent = ' ' * 4 * (level + 1)
+            for name in files:
+                f.write('{}{}\n'.format(subindent, name))
+
+list_files('./','./output.txt')

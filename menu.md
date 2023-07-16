@@ -60,14 +60,20 @@
 4.6 工具包(Toolkits)
 4.7 (本章小结)
 
-第 5 章 内存记忆(Memory)
-5.1 How-to
-5.1.2 会话缓存内存 ConversationBufferMemory)
-5.1.3 会话缓冲窗口记忆(Conversation buffer windowmemory)
-5.1.4 实体记忆(entity_summary_memory)
-5.1.5 会话摘要记忆 (summary)
-5.1.6 基于向量存储的记忆(vectorstore retriever memory)
-5.2 (本章小结)
+第 5 章 记忆
+5.1 记忆组件概述
+5.1.1 概述
+5.1.2 记忆组件的区别
+5.2 会话记忆
+5.2.1 会话记忆和窗口记忆
+5.3 摘要记忆
+5.3.1 会话摘要和窗口会话摘要
+5.4 实体和知识图谱
+5.4.1 实体和知识图谱记忆
+5.5 自定义记忆
+5.5.1 自定义记忆组件
+5.6 本章小结
+
 
 第 6 章 代理人 (Agents)
 6.1 代理类型 (agent_types)
