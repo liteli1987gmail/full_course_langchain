@@ -16,7 +16,7 @@
 
 第 2 章 模型输入输出 (Model I/O)
 2.1 语言模型 (Language models)
-2.1.1 大型语言模型（LLMs）
+2.1.1 大语言模型（LLMs）
 2.1.2 聊天模型 (Chat Models)
 2.1.3 文本嵌入模型 (Text Embedding Models)
 2.2  提示 (Prompts)
