@@ -1,3 +1,4 @@
+
 1. Langchain 概论
 
 ### 1.1.1 为什么需要 Langchain
@@ -236,7 +237,7 @@ pip install openai langchain
 访问 API 需要一个 API 密钥，你可以通过创建一个账户并访问此处获得。一旦我们得到密钥，我们会想要将其设置为环境变量，通过运行：
 
 ```shell
-export OPENAI_API_KEY=“...”
+export openai_api_key=""
 ```
 #### 聊天模型
 

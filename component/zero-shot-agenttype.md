@@ -1,0 +1,1 @@
+使用ZERO_SHOT_REACT_DESCRIPTION类型，意味着该代理可以在没有预先训练的情况下对数据进行描述或反应。

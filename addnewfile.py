@@ -53,7 +53,7 @@ import os
 import subprocess
 
 # 指定Markdown文件夹和输出的Word文件夹
-md_folder = 'pages'
+md_folder = 'pages/第2'
 doc_folder = 'DOC'
 
 # 指定Word模板
@@ -99,28 +99,28 @@ def process_folder(current_folder, output_folder):
 
 process_folder(md_folder,doc_folder)
 
-import os
+# import os
 
-def replace_spaces_with_underscore(directory):
-    # 先遍历所有的文件并重命名
-    for foldername, subfolders, filenames in os.walk(directory):
-        for filename in filenames:
-            if " " in filename:
-                new_filename = filename.replace(" ", "_")
-                old_file_path = os.path.join(foldername, filename)
-                new_file_path = os.path.join(foldername, new_filename)
-                os.rename(old_file_path, new_file_path)
+# def replace_spaces_with_underscore(directory):
+#     # 先遍历所有的文件并重命名
+#     for foldername, subfolders, filenames in os.walk(directory):
+#         for filename in filenames:
+#             if " " in filename:
+#                 new_filename = filename.replace(" ", "_")
+#                 old_file_path = os.path.join(foldername, filename)
+#                 new_file_path = os.path.join(foldername, new_filename)
+#                 os.rename(old_file_path, new_file_path)
 
-    # 再遍历所有的文件夹并重命名
-    for foldername, subfolders, filenames in os.walk(directory):
-        if " " in foldername:
-            new_foldername = foldername.replace(" ", "_")
-            os.rename(foldername, new_foldername)
+#     # 再遍历所有的文件夹并重命名
+#     for foldername, subfolders, filenames in os.walk(directory):
+#         if " " in foldername:
+#             new_foldername = foldername.replace(" ", "_")
+#             os.rename(foldername, new_foldername)
 
 
-# 使用函数
-# 注意：请替换 'your_directory' 为你需要处理的具体目录路径
-# replace_spaces_with_underscore('./pages/')
+# # 使用函数
+# # 注意：请替换 'your_directory' 为你需要处理的具体目录路径
+# # replace_spaces_with_underscore('./pages/')
 
 
 
