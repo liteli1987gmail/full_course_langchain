@@ -1,2 +1,0 @@
-安装Langchain的Python库后，我们就可以导入AzureOpenAI 类。在langchain.llms中，我们已经集成了各大模型平台的API封装。当你在VSCode中编辑并输入点号后，它会自动列出所有可用的封装集成。为了方便识别，这些集成通常都会以其模型平台的名称作为类名的前缀，如AzureOpenAI。
-在 langchain.chat_models 中，我们针对聊天模型专门实现了各大模型平台的API封装。当你在VSCode环境中编程并输入点号后，系统会自动列举所有的聊天模型封装集成选项。为了方便开发者迅速识别，这些封装通常以其对应的模型平台名称作为类名的前缀，例如AzureOpenAI。如果你想使用Azure的聊天模型，可以直接通过from langchain.chat_models.azure_openai import AzureChatOpenAI来导入AzureChatOpenAI类。
