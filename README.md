@@ -1,15 +1,22 @@
-# LangChain 🦜️ - COMPLETE TUTORIAL - Basics to advanced concept!
+# LangChain 🦜️ - 《LangChain 入门指南》代码仓库
 
-- `python .\addnewfile.py` 添加文件目录和文件夹。
-- menu.md 存放所有的目录结构，版本控制，可以添加新的文件，命名规则为① 1.1.1 Nodejs 和npm => 1.1.1 换成新的文件名 ； ② 1.1.1 Nodejs 和npm =》 1.1.1 Nodejs 和npm （v2)
+## 安装指南
+
+为了确保此项目在你的本地环境中正确运行，您需要安装相应的依赖项。项目依赖项已在`requirements.txt`文件中列出。您可以通过以下步骤安装这些依赖项：
+
+1. **克隆仓库**  
+   如果您尚未克隆仓库，请使用以下命令进行克隆：
+   ```bash
+   git clone https://github.com/liteli1987gmail/full_course_langchain
+   ```
+2. **安装依赖项**  
+   在项目根目录下，运行以下命令来安装所有必需的依赖项：
+   ```bash
+   pip install -r requirements.txt
+
+## 学习社群协助
+
+![学习社群](./img/群二维码.jpg)
 
 
-## 格式
 
-1. 注释中文在前，s复数去掉，英文在后。
-2. 标题不要英文标注，正文第一次出现，标注一次。
-3. LMs vs Chat Models 的区别 格式为： LMs 和 Chat Models 的区别
-4. 技术书籍用你，而不是你
-5. 2个标题不要重复，如果重复的地方补充过渡的解释。
-6. 图片在说明段落的后面，并且标注 “图 章节-顺序号”,比如“图 2-1”
-7. 标题后不能直接上代码，可以中间写正文，或者将标题换成正文
