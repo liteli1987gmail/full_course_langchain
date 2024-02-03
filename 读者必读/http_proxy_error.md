@@ -13,7 +13,7 @@ export https_proxy=http://127.0.0.1:端口号
 
 - window PowerShell
 $env:http_proxy = "http://127.0.0.1:端口号"
-$env:https_proxy=http://127.0.0.1:端口号
+$env:https_proxy= "http://127.0.0.1:端口号"
 
 
 - 电脑的环境变量配置
