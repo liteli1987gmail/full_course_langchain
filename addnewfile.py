@@ -124,6 +124,71 @@ process_folder(md_folder,doc_folder)
 
 
 
+# 在 FastAPI 中，用户首次登录时，需要验证他们的身份。这通常通过比较他们提供的用户名和密码与数据库中存储的信息来完成。如果认证成功，服务器将生成一个令牌（通常是 JWT，即 JSON Web Token）并返回给用户。
+
+# 步骤1：导入所需的库和模块
+
+# 首先，我们需要导入 FastAPI 和 Pydantic 中的一些模块。Pydantic 是一个用于数据验证和序列化的库，我们将使用它来定义用户的模型。
+
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
+from typing import Optional
+    
+# 步骤2：创建 FastAPI 实例和 OAuth2PasswordBearer 实例
+
+# 然后，我们创建 FastAPI 实例，并定义一个 OAuth2PasswordBearer 实例。OAuth2PasswordBearer 是 FastAPI 提供的一个用于处理 OAuth2 密码授权的类。
+
+app = FastAPI()
+OAuth2PasswordBearer = None
+
+# 步骤3：定义登录路由和处理函数的基本结构
+class User(BaseModel):
+    username: str
+    password: str
+
+def authenticate_user(username: str, password: str):
+    # Add your authentication logic here
+    # Compare the provided username and password with the ones stored in the database
+    # Return True if authentication is successful, otherwise False
+    return True
+
+@app.post("/login")
+def login(user: User):
+    if not authenticate_user(user.username, user.password):
+        raise HTTPException(status_code=401, detail="Invalid username or password")
+    
+    # Generate and return the token here
+    token = generate_token(user.username)
+    return {"token": token}
+
+
+# 步骤4：在处理函数中添加用户认证
+from fastapi.security import OAuth2PasswordBearer
+import json
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/login")
+
+@app.get("/protected")
+def protected_route(token: str = Depends(oauth2_scheme)):
+    # Add your protected route logic here
+    # Verify the token and grant access to the protected resource
+    return {"message": "Access granted"}
+
+# 帮我把用户列表的 JSON 数据转换为 Python 中的用户对象
+# data = [
+#     {"name": "Alice", "age": 30, "email": "alice@example.com"},
+#     {"name": "Bob", "age": 35, "email": "bob@example.com"}
+# ]
+
+
+class User:
+    def __init__(self, name, age, email):
+        self.name = name
+        self.age = age
+        self.email = email
+
+    def __str__(self):
+        return f"User(name={self.name}, age={self.age}, email={self.email})"
+
 
 
 
